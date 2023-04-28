@@ -7,7 +7,7 @@ This project is focussed on recognizing Uno cards. In this implementation a vide
 
 
 ## Repository Overview
-This repository contains the main program `detectExtract_Identify.py` which can be executed as a normal python program. The `templates` folder contains the images which will be used as the templates in the card recognization process. `video.mp4` is the default input data stream for the program. The `colourLimitIdentification.py` program is used to identify the upper and lower limits of CSV calues which is used in the main program. Once identified the best ranges, these values need to be updated in the program manually. The `'Old Miscellaneous'` folder contains some of the python programs which are NOT organized or error free but used in previous attempts to detect Uno cards using different approaches.
+This repository contains the main program `detectExtract_Identify.py` which can be executed as a normal python program. The `templates` folder contains the images which will be used as the templates in the card recognization process. `video.mp4` is the default input data stream for the program. The `colourLimitIdentification.py` program is used to identify the upper and lower limits of CSV calues which is used in the main program. Once identified the best ranges, these values need to be updated in the program manually.
 
 ## Execution Instructions 
 The python file, video and the templates folder have to be in the same location in order for the program to access video and the templates inside the folder.
