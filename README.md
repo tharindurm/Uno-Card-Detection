@@ -14,7 +14,7 @@ The python file, video and the templates folder have to be in the same location 
 
  The programs can be executed from the terminal using following command.
 ```shell
-  python filename.py
+  python detectExtract_Identify.py
 ```
 These programs requires `opencv` and `numpy` libraries installed along with their dependant libraries. You can use `pip` command to install the required libraries.
 ```shell
@@ -72,11 +72,13 @@ Using these upper,lower limits for each color and HSV image, separate colour mas
 
 
 ## Limitations
-- The current implementation can give best results only when in a controlled environment. If the environment is dynamic with varying light conditions and a complex backgrounds, the program will fail.
+- The current implementation can give best results only when in a controlled environment. If the environment is dynamic with varying light conditions and complex backgrounds, the program will fail.
 
-- The program will correctly detect card only up to a 45 degree of tils of the cards.
+- The program will correctly detect card only up to a 45 degree of tilt.
 
 - Program cannot detect the cards if they are occluded
+
+- Program cannot recognize multiple cards at the same time
 
 ## Demo Video
 
