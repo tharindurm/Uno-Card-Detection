@@ -1,0 +1,7 @@
+Sample video which is being accessed by the program cannot be uploaded in to github as it exceeds 100MB limit. Same video uploded to UniHub module submission link
+
+Github
+https://github.com/tharindurm/Uno-Card-Detection
+
+Demo
+https://youtu.be/zOOz18q5BD0
