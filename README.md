@@ -12,11 +12,15 @@ This repository contains the main program `detectExtract_Identify.py` which can 
 ## Execution Instructions 
 The python file, video and the templates folder have to be in the same location in order for the program to access video and the templates inside the folder.
 
- The program can be executed from the terminal using following command.
+ The programs can be executed from the terminal using following command.
 ```shell
   python filename.py
 ```
-
+These programs requires `opencv` and `numpy` libraries installed along with their dependant libraries. You can use `pip` command to install the required libraries.
+```shell
+  pip install opencv-python
+  pip install numpy
+```
 
 ## Approach taken to recognize the Uno card
 
