@@ -62,6 +62,11 @@ In order to detect color, upper and lower limits for the Red, Green, Blue and Ye
 Using these upper,lower limits for each color and HSV image, separate colour masks are created for each color using the `cv2.inRange()` function. Which means if any color specified in the range is available in the HSV image, those pixels will be visibale as white pixels in the created mask. Then the number of white pixels are counted for every mask and the mask with maximum number of white pixels is considered as the color of the image. In this application, if the color of the card is blue, only `mask_blue` mask will contain white pixels while others does not contain any white pixels. These color limits needs to be rechecked if the lighting conditions of the enviroment changes.
 
 
+## The process at a glance
+![Flowchart](https://user-images.githubusercontent.com/22220191/235213729-27966419-0e3f-4024-89d8-b03ab230afbf.jpg)
+
+
+
 ## Limitations
 - The current implementation can give best results only when in a controlled environment. If the environment is dynamic with varying light conditions and a complex backgrounds, the program will fail.
 
