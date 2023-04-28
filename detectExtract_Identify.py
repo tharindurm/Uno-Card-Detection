@@ -80,7 +80,7 @@ def getMainColor(img):
 
 
 # Start reading video file
-cap = cv2.VideoCapture('ca.mp4')
+cap = cv2.VideoCapture('Video-muted.mp4')
 
 # This variable was used to append at the file name during template collection stage
 # num = 0
@@ -208,7 +208,7 @@ while cap.isOpened():
             color, masks = getMainColor(tiny_img_rotated_cropped_image)
 
             # Checks if a color card or a black card is selected
-            if name == 'Take4' or name == 'Wild':
+            if name == 'Wild Take4' or name == 'Wild Card':
                 card_name = name
                 cv2.putText(resized_img, card_name, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
             else:
