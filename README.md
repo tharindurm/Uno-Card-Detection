@@ -3,7 +3,8 @@
 
 This project is focussed on recognizing Uno cards. In this implementation a video file is chosen as the input data stream for the program.
 
-<<Whole image>>
+![Whole](https://user-images.githubusercontent.com/22220191/235207396-5b0a239a-06ad-4a42-a7f2-15f7b494a883.JPG)
+
 
 ## Repository Overview
 This repository contains the main program `detectExtract_Identify.py` which can be executed as a normal python program. The `templates` folder contains the images which will be used as the templates in the card recognization process. `video.mp4` is the default input data stream for the program. The `colourLimitIdentification.py` program is used to identify the upper and lower limits of CSV calues which is used in the main program. Once identified the best ranges, these values need to be updated in the program manually. The `'Old Miscellaneous'` folder contains some of the python programs which are NOT organized or error free but used in previous attempts to detect Uno cards using different approaches.
@@ -35,7 +36,8 @@ In order to make the matching process accurate and less complex, it was decided 
 ### Detecting Numbers and symbols
 In order to detect the number or the symbol, template matching was used along with a series of preprocesing techniques. The image was first acquired and converted in to gayscale. This image was later used for thresholding. This removes the dark background from the image while preserving only the uno card.
 
-<<img: ori-gray-des>>
+![ori-gray-thresh](https://user-images.githubusercontent.com/22220191/235207626-fdd8c59a-074e-48bd-b702-5c77523b72c2.jpg)
+
 
 This binary image is then processed to find the largest contour in the image. This outlines the UNO card itself. Instead of having the coordinates for a bounding box to enclose the UNO card, `cv2.minAreaRect()` is used to calculate the  coordinates for a rectangle which fits around the UNO card. This significantly reduces the seeping of background of the image in to the bounding box which could happen if the card is tilted. The `cv2.minAreaRect()` function also return the tilt angle of the rectangle. Using this information, the original color image is then rotated to make the card vertically aligned using `cv2.warpAffine()` function.
 
@@ -43,9 +45,7 @@ By this point the UNO card is properly aligned vertically but previously compute
 
 This image is then processed using canny edge detection which outlines the edges of the card. Every unique card was processed according to the mentioned procedure and those images were saved separately to be used as templates when actual template matching is being done. The `returnTemplateName()` function in the main program is responsible for doing the template matching and card or symbol recognition process.
 
-
-<<Templates images>>
-
+![tmplates](https://user-images.githubusercontent.com/22220191/235207682-d477ad6d-1173-47be-8db0-98d642981c52.JPG)
 
 During the card recognition process, saved templates were loaded in to the program and the acquired image is then processed according to above mentioned process. Once it reaches the canny edge detected stage, it is compared with the templates to find the best match using `cv2.matchTemplate()` function.
 
@@ -56,7 +56,8 @@ During the card recognition process, saved templates were loaded in to the progr
 
 In order to detect color, upper and lower limits for the Red, Green, Blue and Yellow in CSV color space need to be determined. This is done by using `colourLimitIdentification.py` program.
 
-<<col limit image>>
+![3](https://user-images.githubusercontent.com/22220191/235207811-eb8b0edf-829c-4991-8db6-5ee2e2efa782.jpg)
+
 
 Using these upper,lower limits for each color and HSV image, separate colour masks are created for each color using the `cv2.inRange()` function. Which means if any color specified in the range is available in the HSV image, those pixels will be visibale as white pixels in the created mask. Then the number of white pixels are counted for every mask and the mask with maximum number of white pixels is considered as the color of the image. In this application, if the color of the card is blue, only `mask_blue` mask will contain white pixels while others does not contain any white pixels. These color limits needs to be rechecked if the lighting conditions of the enviroment changes.
 
